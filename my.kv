@@ -1,0 +1,25 @@
+#:kivy 1.11.1
+<MainWindow>:
+    link: link
+    pos: 0, root.height - 34
+    BoxLayout:
+        height: "34dp"
+        size_hint_y: None
+        orientation: "horizontal"
+        spacing: 10
+        padding: [10, 0]
+        Label:
+            size_hint: (0.05, 0.9)
+            text: "Link: "
+            padding_x: [20,0]
+        TextInput:
+            id: link
+            size_hint: (0.83, 0.9)
+            font_size: "16px"
+            multiline: False
+        Button:
+            size_hint: (0.12, 0.9)
+            text: "Download!"
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "down"
